@@ -1,0 +1,264 @@
+<!html> 
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>BSIT Facebook Page</title>
+  <style>
+    /* Base Styles */
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: linear-gradient(to bottom, #f9f9f9, #e6e9f0);
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      line-height: 1.6;
+      color: #222;
+      scroll-behavior: smooth;
+    }
+    html { box-sizing: border-box; }
+    *, *:before, *:after { box-sizing: inherit; }
+
+    /* Header */
+    header {
+      background: linear-gradient(90deg, #4267B2, #365899);
+      color: white;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+      border-bottom: 5px solid #333;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      animation: slideDown 1s ease;
+      font-variant: small-caps;
+    }
+    header img {
+      height: 80px;
+      border: 3px solid white;
+      border-radius: 50%;
+      transition: transform 0.3s ease;
+    }
+    header img:hover { transform: rotate(10deg) scale(1.1); }
+    header h1 {
+      margin: 0;
+      font-size: 2.5em;
+      letter-spacing: 2px;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+      text-transform: uppercase;
+    }
+    header p {
+      margin: 5px 0 0;
+      font-style: italic;
+      opacity: 0.9;
+      font-size: 1.1em;
+    }
+
+    /* Buttons */
+    .button {
+      display: inline-block;
+      background: #4267B2;
+      color: white;
+      padding: 12px 25px;
+      margin: 20px;
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: bold;
+      border: 2px solid #333;
+      transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+      font-family: Tahoma, sans-serif;
+      letter-spacing: 1px;
+    }
+    .button:hover {
+      background: #365899;
+      transform: scale(1.1);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+      border-color: #4267B2;
+    }
+    .button:active { transform: scale(0.95); }
+
+    /* Sections */
+    section {
+      padding: 20px;
+      margin: 20px auto;
+      max-width: 900px;
+      border: 2px solid #ccc;
+      border-radius: 10px;
+      background: linear-gradient(to right, #fff, #f7f7f7);
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+      cursor: default;
+    }
+    section:hover { transform: translateY(-5px); }
+    section h2 {
+      color: #4267B2;
+      margin-bottom: 15px;
+      border-bottom: 2px solid #4267B2;
+      display: inline-block;
+      padding-bottom: 5px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 1.8em;
+      font-family: 'Trebuchet MS', sans-serif;
+    }
+    section p { margin: 10px 0; line-height: 1.5; }
+
+    /* Footer */
+    footer {
+      background: linear-gradient(to right, #333, #222);
+      color: white;
+      padding: 15px;
+      margin-top: 20px;
+      border-top: 5px solid #4267B2;
+      font-size: 0.9em;
+      text-align: center;
+      letter-spacing: 1px;
+      font-style: italic;
+    }
+    footer p { margin: 5px 0; opacity: 0.8; }
+
+    /* Gallery */
+    .gallery {
+      background: linear-gradient(to right, #eef2f7, #dde3eb);
+      padding: 30px;
+      border: 2px dashed #4267B2;
+      border-radius: 10px;
+      margin: 20px auto;
+      max-width: 1000px;
+      animation: fadeIn 1.5s ease;
+      font-family: Georgia, serif;
+      box-shadow: inset 0 0 10px rgba(0,0,0,0.1);
+    }
+    .gallery h2 {
+      margin-bottom: 20px;
+      color: #4267B2;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: bold;
+      text-shadow: 1px 1px 2px #ccc;
+    }
+    .cards {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .card {
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      width: 250px;
+      text-align: center;
+      padding: 15px;
+      border: 2px solid #ccc;
+      transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+      cursor: pointer;
+      font-family: Verdana, sans-serif;
+      border-style: solid;
+    }
+    .card:hover {
+      transform: scale(1.05);
+      border-color: #4267B2;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+    }
+    .card img {
+      width: 100%;
+      border-radius: 5px;
+      border: 1px ridge #999;
+      transition: opacity 0.3s ease;
+    }
+    .card img:hover { opacity: 0.8; }
+    .card h3 {
+      margin: 10px 0 5px;
+      color: #333;
+      font-weight: bold;
+      text-transform: capitalize;
+      border-bottom: 1px dotted #ccc;
+    }
+    .card p {
+      font-size: 0.9em;
+      color: #555;
+      font-style: italic;
+      padding: 5px;
+    }
+    .card:nth-child(odd) { background: #fafafa; }
+    .card:nth-child(even) { background: #fdfdfd; }
+    .card:hover h3 { color: #4267B2; }
+    .card:hover p { color: #000; }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes slideDown {
+      from { transform: translateY(-100%); }
+      to { transform: translateY(0); }
+    }
+
+    /* Links */
+    a { transition: color 0.3s ease; }
+    a:hover { color: #4267B2; }
+  </style>
+</head>
+<body>
+  <header>
+    <!-- Logo clickable link -->
+    <a href="546622051_122099954979014181_338333627503656559_n.jpg" target="_blank">
+      <img src="546622051_122099954979014181_338333627503656559_n.jpg" alt="BSIT Logo" width="200" height="200">
+    </a>
+    <div class="title">
+      <h1>The Algorithm</h1>
+      <p>Welcome to BSIT 1B Community</p>
+    </div>
+  </header>
+
+  <section>
+    <h2>About Us</h2>
+    <p>Building Digital Bridges for Tomorrow — BSIT 1B 2025–2026.</p>
+    <p>We are BSIT students passionate about technology, collaboration, and innovation.</p>
+    <p>Being part of the BSIT 1B community means belonging to a supportive group of students who share the same passion for technology and learning.</p>
+    <p>The section thrives on collaboration, with members helping each other through projects, study sessions, and challenges.</p>
+    <p>It fosters resilience, teamwork, and friendship, making academic life more manageable and enjoyable.</p>
+    <p>Beyond studies, BSIT 1B celebrates milestones and builds lasting memories, showing that success is not just individual but a shared achievement.</p>
+  </section>
+
+  <section>
+    <h2>Join Us on Facebook</h2>
+    <p>Stay updated with announcements, events, and activities.</p>
+    <a class="button" href="https://www.facebook.com/profile.php?id=61580425452063" target="_blank">
+      Visit Our Facebook Page
+    </a>
+  </section>
+
+  <!-- New Gallery Section -->
+  <section class="gallery">
+    <h2>Community Highlights</h2>
+  <div class="cards">
+      <div class="card">
+        <h3>Classroom Officers</h3>
+        <p>passionate and dedicated officers.</p>
+      </div>
+      <div class="card">
+        <h3>Project Presentations</h3>
+        <p>Showcasing innovative ideas and teamwork.</p>
+      </div>
+      <div class="card">
+        <h3>Celebrations</h3>
+        <p>Milestones and achievements together.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>Members:</p>
+    <p>Mary Angel Dela Torre</p>
+    <p>Lyn Pagsuguiron</p>
+    <p>Maricel Juanites</p>
+    <p>Reyven James Samillano</p>
+	<p>Lorry John Amar</p>
+  </footer>
+</body>
+</html>
