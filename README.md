@@ -206,8 +206,8 @@
 <body>
   <header>
     <!-- Logo clickable link -->
-    <a href="546622051_122099954979014181_338333627503656559_n.jpg" target="_blank">
-      <img src="546622051_122099954979014181_338333627503656559_n.jpg" alt="BSIT Logo" width="200" height="200">
+    <a href="https://www.facebook.com/photo/?fbid=122099955069014181&set=a.122099890353014181&__tn__=%3C" target="_blank">
+      <img src="https://www.facebook.com/photo/?fbid=122099955069014181&set=a.122099890353014181&__tn__=%3C" alt="BSIT Logo" width="200" height="200">
     </a>
     <div class="title">
       <h1>The Algorithm</h1>
